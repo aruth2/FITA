@@ -1,0 +1,7 @@
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install gtk+3
+install gnuplot
+BASEDIR="$( dirname "$0" )"
+cd "$BASEDIR"
+gcc FITA.c -o FITA `pkg-config --cflags --libs gtk+-3.0` -w -lm -lfftw3
+./FITA
